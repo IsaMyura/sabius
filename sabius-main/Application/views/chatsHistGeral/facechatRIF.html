@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="../../../public/assets/css/facechat.css">
+    <title>Assistente API</title>
+</head>
+<body>
+    <div class="footer">
+        <a href="../chatsHistBrasil/historiabrasil.html"><button class="voltar">Voltar</button></a>
+        <a href="../../views/index.html"><button class="home"><img src="../../../public/assets/img/his_casa.png" width="70px" height="70px"></button></a>
+    </div>
+    <div id="app"></div>
+
+    <!-- Importando o script.js -->
+    <script src="../../../public/assets/js/chamarchat.js"></script>
+
+    <script>
+        // Chama a função para criar a interface quando a página carregar
+        window.onload = function() {
+            criarInterfaceAPI();  // Cria a interface
+            
+            // Aqui você define a mensagem padrão conforme o arquivo
+            const mensagemPadrao = "Olá chat, (se apresente como Sabius) eu quero saber rapidamente de uma forma resumida e facil de entender, o que foram as Revoluçoes Inglesas e Francesas";
+            enviarMensagemPadrao(mensagemPadrao);  // Envia a mensagem padrão
+        };
+    </script>
+</body>
+</html>

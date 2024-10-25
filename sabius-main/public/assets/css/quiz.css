@@ -1,0 +1,108 @@
+*{
+  font-family:  "Righteous", cursive;
+}
+.checkbox-wrapper input[type="checkbox"] {
+    visibility: hidden;
+    display: none;
+  }
+  
+  .checkbox-wrapper * {
+    box-sizing: border-box;
+    user-select: none;
+  }
+  
+  .checkbox-wrapper {
+    position: relative;
+    display: block;
+    overflow: hidden;
+  }
+  
+  .checkbox-wrapper .label {
+    cursor: pointer;
+  }
+  
+  .checkbox-wrapper .check {
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    opacity: 0; /* A checkbox real está oculta */
+  }
+  
+  .checkbox-wrapper .label svg {
+    vertical-align: middle;
+  }
+  
+  .checkbox-wrapper .path1 {
+    stroke-dasharray: 400;
+    stroke-dashoffset: 400;
+    transition: .5s stroke-dashoffset;
+    opacity: 0; /* Começa invisível */
+  }
+  
+  .checkbox-wrapper .check:checked + label svg g path {
+    stroke-dashoffset: 0; /* Muda para mostrar a pintura */
+    opacity: 1; /* Torna visível */
+  }
+/* From Uiverse.io by mrhyddenn */ 
+/* From Uiverse.io by abrahamcalsin */ 
+button {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 5px;
+  background: #183153;
+  font-family: "Righteous", cursive;
+  box-shadow: 0px 6px 24px 0px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+  cursor: pointer;
+  border: none;
+}
+
+button:after {
+  content: " ";
+  width: 0%;
+  height: 100%;
+  background: #ffd401;
+  position: absolute;
+  transition: all 0.4s ease-in-out;
+  right: 0;
+}
+
+button:hover::after {
+  right: auto;
+  left: 0;
+  width: 100%;
+}
+
+button span {
+  text-align: center;
+  text-decoration: none;
+  width: 100%;
+  padding: 18px 25px;
+  color: #fff;
+  font-size: 1.125em;
+  font-weight: 700;
+  letter-spacing: 0.3em;
+  z-index: 20;
+  transition: all 0.3s ease-in-out;
+}
+
+button:hover span {
+  color: #183153;
+  animation: scaleUp 0.3s ease-in-out;
+}
+
+@keyframes scaleUp {
+  0% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(0.95);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}

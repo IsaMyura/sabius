@@ -1,21 +1,21 @@
 let perguntas = []; // Array para armazenar as perguntas
-let perguntaAtual = 0; // Para controlar a pergunta atual
+let perguntaAtual = 0; 
 let acertos = 0; // Para contar os acertos
 let acertosPorTema = {};
 let respostasUsuario = [];
 
-// Função para carregar perguntas do arquivo JSON
+// Função para carregar perguntas do arquivo JS
 async function carregarPerguntas() {
     try {
-        const response = await fetch('/sabius-main/public/assets/json/questoesenem.json'); // Atualize o caminho
+        const response = await fetch('/sabius-main/public/assets/json/questoesenem.json'); 
         perguntas = await response.json(); // Armazena as perguntas no array
-        mostrarPergunta(); // Mostra a primeira pergunta após carregar
+        mostrarPergunta(); 
     } catch (error) {
         console.error('Erro ao carregar perguntas:', error);
     }
 }
 
-// Função para mostrar a pergunta atual
+
 function mostrarPergunta() {
     if (perguntaAtual < perguntas.length) {
         const pergunta = perguntas[perguntaAtual];
@@ -26,7 +26,7 @@ function mostrarPergunta() {
         alternativasContainer.innerHTML = '';
 
         pergunta.alternativas.forEach((alternativa, index) => {
-            // Criação do radio
+            
             const radioHTML = `
                 <div class="checkbox-wrapper">
                     <input type="radio" name="pergunta${perguntaAtual}" class="check" id="check${index}" onchange="atualizarResposta(${index})">
@@ -44,7 +44,7 @@ function mostrarPergunta() {
             alternativasContainer.innerHTML += radioHTML;
         });
 
-        // Esconde o botão "Próxima Pergunta" inicialmente
+        // Esconde o botão "Próxima Pergunta" 
         document.getElementById('proxima').style.display = 'none';
     } else {
         mostrarResultado(); // Chama a função para mostrar o resultado se não houver mais perguntas
@@ -71,8 +71,8 @@ function proximaPergunta() {
     }
     
     perguntaAtual++; // Avança para a próxima pergunta
-    respostaUsuario = null; // Reseta a resposta do usuário
-    mostrarPergunta(); // Mostra a próxima pergunta
+    respostaUsuario = null; 
+    mostrarPergunta(); 
 }
 
 // Função para mostrar o resultado

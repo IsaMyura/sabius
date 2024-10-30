@@ -1,4 +1,4 @@
-// ranking.js
+
 
 function calcularRanking(perguntas, respostasUsuario) {
     const ranking = {};

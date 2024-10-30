@@ -27,7 +27,7 @@ headers = {
     'Content-Type': 'application/json'
 }
 
-# Configuração da interface Tkinter
+
 janela = tk.Tk()
 janela.title("SABIUS")
 
@@ -43,5 +43,5 @@ botao.pack(pady=10)
 saida = scrolledtext.ScrolledText(janela, width=60, height=10)
 saida.pack(padx=10, pady=10)
 
-# Inicia a interface gráfica
+# Inicia a interface 
 janela.mainloop()

@@ -29,9 +29,9 @@ function criarInterfaceAPI() {
 }
 
 // Função para enviar a pergunta para a API
-async function enviarPergunta() {
-    const pergunta = document.getElementById('entrada').value;
-    const apiKey = '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';  
+async function enviarPergunta(pergunta = null) {
+    const perguntaFinal = pergunta || document.getElementById('entrada').value; // Usa a pergunta padrão se fornecida
+    const apiKey = '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';  
     const url = 'https://api.openai.com/v1/chat/completions';
 
     // Mostra "Digitando..." no campo de saída enquanto a resposta não chega
@@ -80,6 +80,5 @@ async function enviarPergunta() {
 
 // Função para carregar a mensagem padrão e enviá-la automaticamente
 function enviarMensagemPadrao(mensagemPadrao) {
-    document.getElementById('entrada').value = mensagemPadrao;
-    enviarPergunta();  // Envia a mensagem padrão assim que a página carrega
+    enviarPergunta(mensagemPadrao);
 }

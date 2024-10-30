@@ -2,7 +2,7 @@ import requests
 import json
 
 # Substitua 'sua_chave_de_api_aqui' pela sua chave de API real
-api_key = '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'
+api_key = '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'
 url = 'https://api.openai.com/v1/chat/completions'
 
 headers = {

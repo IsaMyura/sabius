@@ -34,7 +34,7 @@ async function enviarPergunta(pergunta = null) {
     const apiKey = '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';  
     const url = 'https://api.openai.com/v1/chat/completions';
 
-    // Mostra "Digitando..." no campo de saída enquanto a resposta não chega
+    // Mostra "Digitando..." 
     const saida = document.getElementById('saida');
     saida.value = 'Sabius está a reunir todos seus conhecimentos...';
 
@@ -57,28 +57,28 @@ async function enviarPergunta(pergunta = null) {
         const data = await response.json();
         const resposta = data.choices[0].message.content;
 
-        // Adicione sua frase padrão aqui
+     
     const frasePadrao = "\n\nA sabedoria de Sabius poderia te ajudar em algo a mais?";
 
-        // Simula a digitação da resposta
+        //  Digitação da resposta
         let index = 0;
-        saida.value = ''; // Limpa a área de saída
+        saida.value = ''; 
         const typingInterval = setInterval(() => {
             if (index < resposta.length) {
-                saida.value += resposta.charAt(index); // Adiciona um caractere por vez
+                saida.value += resposta.charAt(index); // Um caractere por vez
                 index++;
             } else {
-                clearInterval(typingInterval); // Para a simulação quando a resposta estiver completa
-                 // Adiciona a frase padrão ao final
+                clearInterval(typingInterval); 
+                
             saida.value += frasePadrao; 
             }
-        }, 30); // Tempo entre cada caractere (50ms neste caso)
+        }, 30); 
     } else {
-        saida.value = `Erro: ${response.status}`; // Mostra erro em caso de falha
+        saida.value = `Erro: ${response.status}`; 
     }
 }
 
-// Função para carregar a mensagem padrão e enviá-la automaticamente
+
 function enviarMensagemPadrao(mensagemPadrao) {
     enviarPergunta(mensagemPadrao);
 }

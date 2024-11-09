@@ -75,6 +75,11 @@ function proximaPergunta() {
     mostrarPergunta(); 
 }
 
+//  function voltarPergunta() {
+//     perguntas[perguntaAtual-2];
+//      mostrarPergunta();
+//  }
+
 // Função para mostrar o resultado
 function mostrarResultado() {
     const resultadoContainer = document.getElementById('resultado');

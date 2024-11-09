@@ -11,10 +11,21 @@
     <div class="main">
         <h2 id="pergunta"></h2>
         <div id="alternativas"></div>
-        <span><button id="proxima" onclick="proximaPergunta()" style="display: none;">Próxima Pergunta</button></span>
-        <div id="resultado"></div>
-        <div id="ranking"></div> 
-    </div>
+        <button class="cta" onclick="proximaPergunta()">
+        <span>próxima pergunta</span>
+        <svg width="15px" height="10px" viewBox="0 0 13 10">
+            <path d="M1,5 L11,5"></path>
+            <polyline points="8 1 12 5 8 9"></polyline>
+        </svg>
+        </button>
+        <button class="cta2" onclick="voltarPergunta()">
+            <span>voltar pergunta</span>
+            <svg width="15px" height="10px" viewBox="0 0 13 10">
+                <path d="M1,5 L11,5"></path>
+                <polyline points="8 1 12 5 8 9"></polyline>
+            </svg>
+            </button>
+   </div>
     <script src="../../public/assets/js/quiz.js"></script>
     <script src="../../public/assets/js/ranking.js"></script>
 </body>

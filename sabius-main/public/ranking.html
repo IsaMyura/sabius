@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Ranking</title>
+</head>
+<body>
+    <h1>Ranking</h1>
+    <div id="resultado"></div>
+
+    <script src="./assets/js/ranking.js"></script> 
+    <script>
+        // Carregar perguntas e respostas do localStorage
+        const perguntas = JSON.parse(localStorage.getItem('perguntas')) || [];
+        const respostasUsuario = JSON.parse(localStorage.getItem('respostasUsuario')) || [];
+
+        // Calcular e mostrar o ranking
+        const ranking = calcularRanking(perguntas, respostasUsuario);
+        mostrarRanking(ranking);
+    </script>
+</body>
+</html>
+

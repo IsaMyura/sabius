@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="./assets/css/facechat.css">
+    <title>Assistente API</title>
+</head>
+<body>
+    <div class="container">
+        <h1>Assistente API</h1>
+        <textarea id="entrada" placeholder="Digite sua pergunta aqui..."></textarea><br>
+        <button onclick="enviarPergunta()">Enviar Pergunta</button>
+        <h2>Resposta:</h2>
+        <textarea id="saida" readonly></textarea>
+    </div>
+
+    <script>
+        // Função para enviar a pergunta para a API
+        async function enviarPergunta() {
+            const pergunta = document.getElementById('entrada').value;
+            const apiKey = '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';  
+            const url = 'https://api.openai.com/v1/chat/completions';
+
+            const response = await fetch(url, {
+                method: 'POST',
+                headers: {
+                    'Authorization': `Bearer ${apiKey}`,
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    model: "gpt-3.5-turbo",
+                    messages: [
+                        { "role": "system", "content": "Você é um assistente útil." },
+                        { "role": "user", "content": pergunta }
+                    ]
+                })
+            });
+
+            if (response.ok) {
+                const data = await response.json();
+                const resposta = data.choices[0].message.content;
+                document.getElementById('saida').value = resposta;
+            } else {
+                document.getElementById('saida').value = `Erro: ${response.status}`;
+            }
+        }
+
+        // Define uma mensagem padrão e envia para a API ao carregar a página
+        window.onload = function() {
+            const mensagemPadrao = "Por favor, forneça um resumo detalhado sobre a História do Brasil. Este é um resumo inicial para ajudar a começar.";
+            document.getElementById('entrada').value = mensagemPadrao;
+            enviarPergunta();  // Envia a mensagem padrão assim que a página carrega
+        };
+    </script>
+</body>
+</html>

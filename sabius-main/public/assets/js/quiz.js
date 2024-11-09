@@ -7,7 +7,7 @@ let respostasUsuario = [];
 // Função para carregar perguntas do arquivo JS
 async function carregarPerguntas() {
     try {
-        const response = await fetch('/sabius-main/public/assets/json/questoesenem.json'); 
+        const response = await fetch('../json/questoesenem.json'); 
         perguntas = await response.json(); // Armazena as perguntas no array
         mostrarPergunta(); 
     } catch (error) {

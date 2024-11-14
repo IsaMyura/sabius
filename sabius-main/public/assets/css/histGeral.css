@@ -24,7 +24,7 @@ h1{
     padding: 15px 15px;
     border-radius: 10px;
     border: 0px;
-    background-color: rgb(255,204,146);
+    background-color:unset;
     box-shadow: #ac71250d 0 0 8px;
     letter-spacing: 1.5px;
     text-transform: uppercase;

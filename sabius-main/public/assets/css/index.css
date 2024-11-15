@@ -1,4 +1,7 @@
-
+.logo_img{
+    width: 898px;
+    height: 547px;
+}
 .logo{
     display: flex;
     justify-content: center;
@@ -40,4 +43,25 @@ button:active{
     box-shadow: rgb(37, 43, 94) 0px 0px 0px 0px;
     transform: translateY(10px);
     transition: 50ms;
+}
+@media screen and (max-width : 1024px) {
+    .logo_img{
+        width: 698px;
+        height: 447px;
+    }
+    .logo{
+        margin-top: 25%;
+    }
+}
+@media screen and (max-width: 600px) {
+    .logo_img{
+        width: 498px;
+        height: 247px;
+    }
+    button{
+        padding: 30px 105px;
+    }
+    .logo{
+        margin-top: 30%;
+    }
 }

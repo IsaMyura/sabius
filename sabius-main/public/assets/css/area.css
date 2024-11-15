@@ -10,6 +10,11 @@ body{
     height: 70vh;
 
 }
+.lgSabius{
+    width:398px;
+    height:247px;
+}
+
 header{
     display: flex;
     align-items: center;
@@ -104,4 +109,17 @@ h1{
     box-shadow: rgb(37, 43, 94) 0px 0px 0px 0px;
     transform: translateY(10px);
     transition: 50ms;
+}
+@media screen and (max-width: 600px) {
+    .container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 30%;
+    margin: 0 auto;
+    }
+    .lgSabius{
+        width:200px;
+        height:147px;
+    }
 }

@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', function() {
 const apiKey = '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';
 const url = 'https://api.openai.com/v1/chat/completions';
 const headers = {
-    'Authorization': 'Bearer ${apiKey}',
+    'Authorization': `Bearer ${apiKey}`, 
     'Content-Type': 'application/json'
 };
 

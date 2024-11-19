@@ -6,6 +6,10 @@ header{
     align-items: center;
     justify-content: space-between;
 }
+.fundo_his{
+    width:398px; 
+    height:247px;
+}
 h1{
     color: rgb(110, 61, 5) ;
     font-family: "Righteous", cursive;
@@ -73,4 +77,26 @@ h1{
     box-shadow: rgb(41, 31, 19) 0px 0px 0px 0px;
     transform: translateY(10px);
     transition: 50ms;
+}
+@media screen and (max-width: 600px) {
+    .container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 30%;
+    margin: 0 auto;
+    }
+    .fundo_his{
+        width:200px;
+        height:147px;
+    }
+}
+@media screen and (max-width: 1024px) {
+    .container{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 30%;
+        margin: 0 auto;
+        }
 }

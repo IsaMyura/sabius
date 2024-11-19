@@ -11,6 +11,10 @@ h1{
     font-family: "Righteous", cursive;
     text-align: center
 }
+.lgSabius{
+    width:398px; 
+    height:247px;
+}
 .container{
     display: flex;
     flex-direction: column;
@@ -73,4 +77,26 @@ h1{
     box-shadow: rgb(41, 31, 19) 0px 0px 0px 0px;
     transform: translateY(10px);
     transition: 50ms;
+}
+@media screen and (max-width: 600px) {
+    .container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 30%;
+    margin: 0 auto;
+    }
+    .lgSabius{
+        width:200px;
+        height:147px;
+    }
+}
+@media screen and (max-width: 1024px) {
+    .container{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 30%;
+        margin: 0 auto;
+        }
 }

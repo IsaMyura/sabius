@@ -7,7 +7,7 @@ let respostasUsuario = [];
 // Função para carregar perguntas do arquivo JS
 async function carregarPerguntas() {
     try {
-        const response = await fetch('/assets/json/questoesenem.json'); 
+        const response = await fetch('./assets/json/questoesenem.json'); 
         perguntas = await response.json(); // Armazena as perguntas no array
         mostrarPergunta(); 
     } catch (error) {
@@ -15,6 +15,14 @@ async function carregarPerguntas() {
     }
 }
 
+// Função para voltar à pergunta anterior
+function voltarPergunta() {
+    if (perguntaAtual > 0) {
+        perguntaAtual--; // Volta uma pergunta
+        respostaUsuario = null; // Reseta a resposta do usuário
+        mostrarPergunta(); // Exibe a pergunta anterior
+    }
+}
 
 function mostrarPergunta() {
     if (perguntaAtual < perguntas.length) {
@@ -53,43 +61,78 @@ function mostrarPergunta() {
 
 // Função para atualizar a resposta do usuário
 function atualizarResposta(resposta) {
-    respostaUsuario = resposta; // Armazena a resposta atual do usuário
+    const pergunta = perguntas[perguntaAtual];
+
+    // Bloqueia todas as alternativas após a seleção
+    const alternativas = document.querySelectorAll(`#alternativas input`);
+    alternativas.forEach((input, index) => {
+        input.disabled = true;
+        const label = input.nextElementSibling;
+
+        // Aplica classe de estilo dependendo da resposta
+        if (index === pergunta.resposta_correta) {
+            label.classList.add('correto');
+        } else if (index === resposta) {
+            label.classList.add('errado');
+        }
+    });
+
+    respostaUsuario = resposta; // Armazena a resposta selecionada
+
+    // Atualiza a contagem de acertos por tema
+    if (resposta === pergunta.resposta_correta) {
+        acertos++;
+        const tema = pergunta.tema;
+
+        if (!acertosPorTema[tema]) {
+            acertosPorTema[tema] = 0;
+        }
+        acertosPorTema[tema]++;
+    }
+
     document.getElementById('proxima').style.display = 'block'; // Mostra o botão "Próxima Pergunta"
 }
 
+
 // Função para ir para a próxima pergunta
 function proximaPergunta() {
+    // A comparação da resposta do usuário com a resposta correta
     if (respostaUsuario === perguntas[perguntaAtual].resposta_correta) {
-        acertos++;
-        const tema = perguntas[perguntaAtual].tema;
+        acertos++; // Incrementa os acertos
 
-        // Verifica se o tema já existe no objeto de acertosPorTema
+        // Verifica o tema da pergunta e incrementa a contagem de acertos para o tema
+        const tema = perguntas[perguntaAtual].tema;
         if (!acertosPorTema[tema]) {
-            acertosPorTema[tema] = 0; // Se não existe, inicializa com zero
+            acertosPorTema[tema] = 0;
         }
-        acertosPorTema[tema]++; // Incrementa a contagem de acertos do tema
+        acertosPorTema[tema]++;
     }
-    
-    perguntaAtual++; // Avança para a próxima pergunta
-    respostaUsuario = null; 
-    mostrarPergunta(); 
+
+    // Armazena a resposta do usuário
+    respostasUsuario.push(respostaUsuario);
+
+    // Incrementa para a próxima pergunta
+    perguntaAtual++;
+
+    // Se não houver mais perguntas, mostra o resultado
+    if (perguntaAtual < perguntas.length) {
+        mostrarPergunta(); // Mostra a próxima pergunta
+    } else {
+        mostrarResultado(); // Exibe o resultado final
+    }
 }
 
-//  function voltarPergunta() {
-//     perguntas[perguntaAtual-2];
-//      mostrarPergunta();
-//  }
 
 // Função para mostrar o resultado
 function mostrarResultado() {
     const resultadoContainer = document.getElementById('resultado');
     resultadoContainer.innerHTML = `Você acertou ${acertos} de ${perguntas.length} perguntas.`;
 
-    // Salvar respostas do usuário no localStorage para uso posterior
+    // Salva dados no localStorage
     localStorage.setItem('respostasUsuario', JSON.stringify(respostasUsuario));
     localStorage.setItem('perguntas', JSON.stringify(perguntas));
 
-    // Redirecionar para a página de ranking
+    // Redireciona para o ranking
     window.location.href = 'ranking.html';
 }
 

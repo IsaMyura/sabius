@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', function() {
     // Mensagem inicial de boas-vindas do assistente
-    addMessage('Olá! Eu sou o Sabius, seu assistente. Como posso te ajudar nos estudos0 hoje?', 'assistant');
+    addMessage('Olá! Eu sou o Sabius, seu assistente. Qual a sua dúvida?', 'assistant');
 });
 
 const apiKey = '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';

@@ -2,22 +2,28 @@
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
-    <title>Ranking</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ranking - Questionário ENEM</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" type="text/css" href="./assets/css/ranking.css">
 </head>
 <body>
-    <h1>Ranking</h1>
-    <div id="resultado"></div>
+    <h1>Ranking - Resultados do Questionário ENEM</h1>
+    <div class="main">
+        <canvas id="grafico-pizza" width="100" height="100"></canvas>
+        
+        <div id="detalhes-acertos-erros">
+            <!-- Detalhes de acertos e erros serão gerados aqui -->
+        </div>
+        
+        <div class="button-container">
+            <a href="apresentacaoQuiz.html">
+                <button>Voltar para o Quiz</button>
+            </a>
+        </div>
+    </div>
 
-    <script src="./assets/js/ranking.js"></script> 
-    <script>
-        // Carregar perguntas e respostas do localStorage
-        const perguntas = JSON.parse(localStorage.getItem('perguntas')) || [];
-        const respostasUsuario = JSON.parse(localStorage.getItem('respostasUsuario')) || [];
-
-        // Calcular e mostrar o ranking
-        const ranking = calcularRanking(perguntas, respostasUsuario);
-        mostrarRanking(ranking);
-    </script>
+    <script src="./assets/js/ranking.js"></script>
 </body>
 </html>
 

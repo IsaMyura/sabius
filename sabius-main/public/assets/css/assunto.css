@@ -1,3 +1,6 @@
+*{
+    font-family: "Righteous", cursive;
+}
 body{
     background-image: url(../img/coruja.jpg);
     background-position: center;
@@ -16,7 +19,6 @@ header{
     justify-content: space-between;
 }
 h1{
-    font-family: "Righteous", cursive;
     text-align: center
 }
 .home{
@@ -30,7 +32,6 @@ h1{
     text-transform: uppercase;
     font-size: 20px;
     transition: all .5s ease;
-    font-family: "Righteous", cursive;
 }
 .home:hover{
     letter-spacing: 3px;
@@ -61,7 +62,6 @@ h1{
     text-transform: uppercase;
     font-size: 20px;
     transition: all .5s ease;
-    font-family: "Righteous", cursive;
 }
 .container button:hover{
     letter-spacing: 3px;
@@ -78,6 +78,9 @@ h1{
     transition: 50ms;
 }
 @media screen and (max-width: 600px) {
+    *{
+        font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+      }
     .container{
     display: flex;
     flex-direction: column;
@@ -91,6 +94,9 @@ h1{
     }
 }
 @media screen and (max-width: 1024px) {
+    *{
+        font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+      }
     .container{
         display: flex;
         flex-direction: column;

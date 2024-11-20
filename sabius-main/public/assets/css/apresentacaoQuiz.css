@@ -86,6 +86,12 @@ button:active{
   transition: 50ms;
 }
 @media screen and (max-width: 1024px) {
+  *{
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  }
+  button{
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+ }
   .container{
     text-align: centers;
     margin-left: 0%;

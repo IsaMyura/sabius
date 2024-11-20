@@ -1,3 +1,6 @@
+*{
+    font-family: "Righteous", cursive;
+}
 .logo_img{
     width: 898px;
     height: 547px;
@@ -26,7 +29,6 @@ button {
     text-transform: uppercase;
     font-size: 20px;
     transition: all .5s ease;
-    font-family: "Righteous", cursive;
 }
 
 button:hover{
@@ -45,6 +47,9 @@ button:active{
     transition: 50ms;
 }
 @media screen and (max-width : 1024px) {
+    *{
+        font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+      }
     .logo_img{
         width: 698px;
         height: 447px;
@@ -54,6 +59,9 @@ button:active{
     }
 }
 @media screen and (max-width: 600px) {
+    *{
+        font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+      }   
     .logo_img{
         width: 498px;
         height: 247px;

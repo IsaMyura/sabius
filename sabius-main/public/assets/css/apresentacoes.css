@@ -249,4 +249,27 @@ h1{
   .brutalist-button.claude:hover .button-text {
     color: #000000; /* Adjusted text color for Claude button hover */
   }
+  @media screen and (max-width: 1024px) {
+    *{
+      font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    }
+    button {
+      padding: 20px 40px;
+    }
+  }
+  @media screen and (max-width: 600px) {
+   *{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+   }
+    button{
+      padding: 20px 25px;
+      margin-left: 0px;
+    }
+    nav{
+      margin-left: 20%;
+    }
+    .header{
+      margin-left: 0%;
+    }
+  }
   

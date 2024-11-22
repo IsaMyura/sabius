@@ -1,20 +1,28 @@
 body {
+    background-image: url(../img/his_BG.jpg);
     font-family: Arial, sans-serif;
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
     margin: 0;
-    background-color: #f4f4f9;
 }
-
+.header{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 40%;
+    margin: 0 auto;
+    margin-top: 20%;
+}
 #chat-container {
+    margin-top: 10%;
     width: 100%;
     max-width: 600px;
     height: 80vh;
-    background-color: #fff;
+    background-color:transparent;
     border-radius: 8px;
-    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 0 15px rgba(0, 0, 0, 1);
     display: flex;
     flex-direction: column;
     padding: 20px;
@@ -34,15 +42,23 @@ body {
     margin: 10px 0;
     word-wrap: break-word;
 }
-
+.caixatxt{
+    background-color:rgb(250, 225, 194) ;
+    
+}
+.caixatxt::placeholder{
+    color:  rgb(82, 58, 31);
+}
 .user-message {
-    background-color: #d1e7ff;
+    background-color: rgb(82, 58, 31);
+    color:rgb(244, 230, 213) ;
     align-self: flex-end;
     border-top-right-radius: 0;
 }
 
 .assistant-message {
-    background-color: #e1e1e1;
+    background-color:rgb(250, 225, 194);
+    color:  rgb(82, 58, 31) ;
     align-self: flex-start;
     border-top-left-radius: 0;
 }
@@ -61,13 +77,30 @@ body {
 
 button {
     padding: 10px 15px;
-    border-radius: 20px;
-    border: 1px solid #ccc;
-    background-color: #4CAF50;
-    color: white;
-    cursor: pointer;
+    border-radius: 10px;
+    border: 0px;
+    background-color: rgb(82, 58, 31) ;
+    box-shadow: #0000000d 0 0 8px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    font-size: 20px;
+    transition: all .5s ease;
+    color:rgb(253, 209, 160);
 }
 
 button:hover {
-    background-color: #45a049;
+    letter-spacing: 1.75px;
+    background-color: rgb(255, 223, 186);
+    color:rgb(110, 61, 5);
+    box-shadow:  rgb(110, 61, 5) 0px 7px 29px 0px;
+}
+button:active{
+    letter-spacing: 1px;
+    background-color:  rgb(189, 158, 122);
+    color: rgb(82, 58, 31)  ;
+    box-shadow: rgb(41, 31, 19) 0px 0px 0px 0px;
+    transform: translateY(5px);
+    transition: 100ms;
+}
+@media screen and (max-width: 600px) {
 }

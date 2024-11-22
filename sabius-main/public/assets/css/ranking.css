@@ -1,8 +1,16 @@
-/* ranking.css */
-
+header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.lgSabius{
+    width:398px;
+    height:247px;
+}
 /* Geral */
 body {
     font-family: Arial, sans-serif;
+    text-align: center;
     background-color: #f4f4f9;
     color: #333;
     margin: 0;

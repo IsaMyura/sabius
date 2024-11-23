@@ -198,3 +198,16 @@ h2{
 .cta2:active {
   transform: scale(0.95);
 }
+@media screen and (max-width: 1024px) {
+  *{
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  }
+  h2{
+    margin-left: 5%;
+    margin-right: 5%;
+    margin-top: 5%;
+  }
+  .cta2{
+    margin-top: 15%;
+  }
+}

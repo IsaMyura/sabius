@@ -98,6 +98,7 @@ h1{
     transform: translateX(-56px);
   }
 .container button {
+    color: white;
     margin-top: 20%;
     padding: 50px 50px;
     border-radius: 10px;

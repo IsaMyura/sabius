@@ -8,6 +8,7 @@ footer{
     align-items: center;
 }
 button {
+    color: white;
     padding: 20px 50px;
     border-radius: 10px;
     border: 0px;

@@ -9,21 +9,34 @@
 </head>
 <body>
     <header>
-            <img class="lgSabius" src="./assets/img/Logopng.png">
+        <img class="lgSabius" src="./assets/img/Logopng.png">
     </header>
     <h1>Resultados do Questionário ENEM</h1>
     <div class="main">
         <canvas id="grafico-pizza" width="100" height="100"></canvas>
-        
+
         <div id="detalhes-acertos-erros">
             <!-- Detalhes de acertos e erros serão gerados aqui -->
         </div>
-        
+
         <div class="button-container">
             <a href="apresentacaoQuiz.html">
                 <button>Voltar para o Quiz</button>
             </a>
+            <!-- Botão para ir à revisão -->
+            <button id="revisarPerguntas">Ir para Revisão</button>
         </div>
+    </div>
+
+    <div id="revisao" style="display: none;">
+        <h2>Revisão das Perguntas</h2>
+        
+        <div id="perguntaRevisao"></div>
+        <div id="alternativasRevisao"></div>
+        <div id="explicacaoRevisao"></div>
+
+        <button id="proximaPergunta">Mostrar próxima pergunta</button>
+        <button id="voltarRanking">Voltar ao Ranking</button>
     </div>
 
     <script src="./assets/js/ranking.js"></script>

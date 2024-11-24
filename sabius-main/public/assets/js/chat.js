@@ -20,6 +20,16 @@ function enviarMensagem() {
     // Limpa a entrada de texto
     document.getElementById('userMessage').value = '';
 
+    // Adiciona a mensagem de "digitando..." do assistente
+    const typingMessageElement = document.createElement('div');
+    typingMessageElement.classList.add('message', 'assistant-message', 'typing');
+    typingMessageElement.textContent = '...';
+    document.getElementById('chat').appendChild(typingMessageElement);
+    
+    // Rola o chat para a última mensagem
+    const chat = document.getElementById('chat');
+    chat.scrollTop = chat.scrollHeight;
+
     // Envia a mensagem para a API do GPT
     const data = {
         model: 'gpt-4',
@@ -37,10 +47,20 @@ function enviarMensagem() {
     .then(response => response.json())
     .then(data => {
         const assistantMessage = data.choices[0].message.content;
+
+        // Remove a mensagem de "digitando..."
+        typingMessageElement.remove();
+
+        // Adiciona a mensagem do assistente
         addMessage(assistantMessage, 'assistant');
     })
     .catch(error => {
         console.error('Erro ao chamar a API:', error);
+
+        // Remove a mensagem de "digitando..." em caso de erro
+        typingMessageElement.remove();
+
+        // Exibe a mensagem de erro
         addMessage('Erro ao processar a resposta.', 'assistant');
     });
 }

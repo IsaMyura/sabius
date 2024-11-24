@@ -15,15 +15,6 @@ async function carregarPerguntas() {
     }
 }
 
-// Função para voltar à pergunta anterior
-function voltarPergunta() {
-    if (perguntaAtual > 0) {
-        perguntaAtual--; // Volta uma pergunta
-        respostaUsuario = null; // Reseta a resposta do usuário
-        mostrarPergunta(); // Exibe a pergunta anterior
-    }
-}
-
 function mostrarPergunta() {
     if (perguntaAtual < perguntas.length) {
         const pergunta = perguntas[perguntaAtual];
@@ -34,7 +25,6 @@ function mostrarPergunta() {
         alternativasContainer.innerHTML = '';
 
         pergunta.alternativas.forEach((alternativa, index) => {
-            
             const radioHTML = `
                 <div class="checkbox-wrapper">
                     <input type="radio" name="pergunta${perguntaAtual}" class="check" id="check${index}" onchange="atualizarResposta(${index})">
@@ -51,6 +41,10 @@ function mostrarPergunta() {
             `;
             alternativasContainer.innerHTML += radioHTML;
         });
+
+        // Exibe o progresso
+        const progresso = document.getElementById('progresso');
+        progresso.innerText = `Pergunta ${perguntaAtual + 1} de ${perguntas.length}`;
 
         // Esconde o botão "Próxima Pergunta" 
         document.getElementById('proxima').style.display = 'none';
@@ -93,7 +87,6 @@ function atualizarResposta(resposta) {
     document.getElementById('proxima').style.display = 'block'; // Mostra o botão "Próxima Pergunta"
 }
 
-
 // Função para ir para a próxima pergunta
 function proximaPergunta() {
     // A comparação da resposta do usuário com a resposta correta
@@ -121,7 +114,6 @@ function proximaPergunta() {
         mostrarResultado(); // Exibe o resultado final
     }
 }
-
 
 // Função para mostrar o resultado
 function mostrarResultado() {

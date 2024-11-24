@@ -7,24 +7,39 @@
     <title>Questionário ENEM - História</title>
 </head>
 <body>
+    <header>
+        <a href="apresentacaoQuiz.html"> 
+            <button class="button">
+              <div class="button-box">
+                <span class="button-elem">
+                  <svg viewBox="0 0 46 40" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                      d="M46 20.038c0-.7-.3-1.5-.8-2.1l-16-17c-1.1-1-3.2-1.4-4.4-.3-1.2 1.1-1.2 3.3 0 4.4l11.3 11.9H3c-1.7 0-3 1.3-3 3s1.3 3 3 3h33.1l-11.3 11.9c-1 1-1.2 3.3 0 4.4 1.2 1.1 3.3.8 4.4-.3l16-17c.5-.5.8-1.1.8-1.9z"
+                    ></path>
+                  </svg>
+                </span>
+                <span class="button-elem">
+                  <svg viewBox="0 0 46 40">
+                    <path
+                      d="M46 20.038c0-.7-.3-1.5-.8-2.1l-16-17c-1.1-1-3.2-1.4-4.4-.3-1.2 1.1-1.2 3.3 0 4.4l11.3 11.9H3c-1.7 0-3 1.3-3 3s1.3 3 3 3h33.1l-11.3 11.9c-1 1-1.2 3.3 0 4.4 1.2 1.1 3.3.8 4.4-.3l16-17c.5-.5.8-1.1.8-1.9z"
+                    ></path>
+                  </svg>
+                </span>
+              </div>
+            </button>
+            </a>
+    </header>
     <h1>Questionário ENEM - História</h1>
     <div class="main">
         <h2 id="pergunta"></h2>
         <div id="alternativas"></div>
+        <div id="progresso"></div>
         <button id="proxima" class="cta" onclick="proximaPergunta()">
         <span>próxima pergunta</span>
         <svg width="15px" height="10px" viewBox="0 0 13 10">
             <path d="M1,5 L11,5"></path>
             <polyline points="8 1 12 5 8 9"></polyline>
         </svg>
-        </button>
-        <button id="voltar" class="cta2" onclick="voltarPergunta()">
-            <span>voltar pergunta</span>
-            <svg width="15px" height="10px" viewBox="0 0 13 10">
-                <path d="M1,5 L11,5"></path>
-                <polyline points="8 1 12 5 8 9"></polyline>
-            </svg>
-            </button>
    </div>
     <div id="resultado" class="resultado"></div>
     <script src="./assets/js/quiz.js"></script>

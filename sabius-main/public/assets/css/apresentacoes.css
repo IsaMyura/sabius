@@ -1,5 +1,5 @@
 body{
-    background-image: url(../img/his_BG.jpg);
+    background-color: rgb(253, 209, 160);
 }
 .chat{
     margin-top: 10%;
@@ -54,7 +54,7 @@ body{
     transition: 50ms
 }
 button {
-    padding: 40px 125px;
+    padding: 40px 50px;
     border-radius: 10px;
     border: 0px;
     background-color:rgb(253, 209, 160);

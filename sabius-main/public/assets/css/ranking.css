@@ -3,6 +3,10 @@ header{
     align-items: center;
     justify-content: space-between;
 }
+.rev{
+    margin-left: 30%;
+    margin-right: 30%;
+}
 .lgSabius{
     width:398px;
     height:247px;

@@ -13,4 +13,4 @@ O **Sabius** é uma plataforma de estudos inteligente desenvolvida como projeto 
 - **IA:** Integração com API de Inteligência Artificial *(OpenAI)*
 
 ## 📄 Licença
-Este projeto foi desenvolvido para fins acadêmicos e de portfólio pessoal.
+Este projeto foi desenvolvido para fins acadêmicos (TCC) e de portfólio pessoal.
